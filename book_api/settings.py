@@ -10,6 +10,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
 INSTALLED_APPS = [
+    'drf_yasg',
     'corsheaders',
     'rest_framework',
     'django.contrib.admin',
@@ -31,6 +32,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10 
+}
 
 ROOT_URLCONF = 'book_api.urls'
 
